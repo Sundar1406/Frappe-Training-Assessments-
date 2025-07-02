@@ -1,0 +1,282 @@
+{
+ "actions": [],
+ "autoname": "format:{name1}-{###}",
+ "creation": "2025-06-20 13:28:56.761067",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "dob",
+  "gender",
+  "are_you_early_member",
+  "please_enter_you_member_ship_id",
+  "address",
+  "column_break_fegq",
+  "barcode",
+  "date_and_time",
+  "sign",
+  "sundar",
+  "section_break_pohs",
+  "column_break_bhno",
+  "password",
+  "icon",
+  "age",
+  "percent",
+  "html",
+  "json",
+  "attach_image_djlh",
+  "rating",
+  "auto_complete",
+  "column_break_yjzi",
+  "choose_any_color",
+  "salary",
+  "table",
+  "duration",
+  "select",
+  "dynamic_link",
+  "image",
+  "sundar_mariappan",
+  "skip",
+  "rating_pmwm",
+  "link",
+  "column_break_iygs",
+  "find_your_place_map",
+  "mark_down_editer",
+  "small_text",
+  "color"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "DOB",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nFemale\nMale\nTrans",
+   "placeholder": "--select--"
+  },
+  {
+   "default": "0",
+   "fieldname": "are_you_early_member",
+   "fieldtype": "Check",
+   "label": "Are you early member "
+  },
+  {
+   "fieldname": "please_enter_you_member_ship_id",
+   "fieldtype": "Link",
+   "label": "Please enter you member ship Id",
+   "options": "Library Membership"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age(Should be give in Number)"
+  },
+  {
+   "fieldname": "column_break_bhno",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Long Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "salary",
+   "fieldtype": "Currency",
+   "label": "Salary"
+  },
+  {
+   "fieldname": "barcode",
+   "fieldtype": "Barcode",
+   "label": "Barcode"
+  },
+  {
+   "fieldname": "choose_any_color",
+   "fieldtype": "Color",
+   "label": "Choose any color"
+  },
+  {
+   "fieldname": "date_and_time",
+   "fieldtype": "Datetime",
+   "label": "Date and time"
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "label": "Password"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Duration",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "find_your_place_map",
+   "fieldtype": "Geolocation",
+   "label": "Find Your Place map"
+  },
+  {
+   "fieldname": "sundar",
+   "fieldtype": "Heading",
+   "label": "Sundar"
+  },
+  {
+   "fieldname": "icon",
+   "fieldtype": "Icon",
+   "label": "Icon"
+  },
+  {
+   "fieldname": "mark_down_editer",
+   "fieldtype": "Markdown Editor",
+   "label": "Mark Down Editer"
+  },
+  {
+   "fieldname": "percent",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Percent"
+  },
+  {
+   "fieldname": "sign",
+   "fieldtype": "Signature",
+   "label": "Sign"
+  },
+  {
+   "fieldname": "table",
+   "fieldtype": "Table",
+   "label": "Table",
+   "options": "Company History"
+  },
+  {
+   "fieldname": "column_break_fegq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_pohs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_yjzi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "auto_complete",
+   "fieldtype": "Autocomplete",
+   "label": "Auto Complete",
+   "options": "Tirunelveli\nTiruchendur\nThiruvannamalai\nTirutharavapundi"
+  },
+  {
+   "fieldname": "select",
+   "fieldtype": "Select",
+   "label": "Select",
+   "options": "Article\nLibrary Member"
+  },
+  {
+   "fieldname": "column_break_iygs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dynamic_link",
+   "fieldtype": "Dynamic Link",
+   "label": "Dynamic Link",
+   "options": "link"
+  },
+  {
+   "fieldname": "html",
+   "fieldtype": "HTML",
+   "label": "HTML",
+   "options": "HTML\n"
+  },
+  {
+   "fieldname": "json",
+   "fieldtype": "JSON",
+   "label": "Json"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Image",
+   "label": "Image",
+   "options": "attach_image_djlh"
+  },
+  {
+   "fieldname": "attach_image_djlh",
+   "fieldtype": "Attach Image"
+  },
+  {
+   "fieldname": "sundar_mariappan",
+   "fieldtype": "Read Only",
+   "label": "Sundar Mariappan"
+  },
+  {
+   "fieldname": "small_text",
+   "fieldtype": "Small Text",
+   "label": "Small Text"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "label": "Rating"
+  },
+  {
+   "fieldname": "skip",
+   "fieldtype": "Button",
+   "label": "Skip"
+  },
+  {
+   "fieldname": "rating_pmwm",
+   "fieldtype": "Rating",
+   "options": "10"
+  },
+  {
+   "fieldname": "link",
+   "fieldtype": "Link",
+   "label": "Link",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Color",
+   "label": "color"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-06-26 12:26:50.628182",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Field name",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,41 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-06-28 18:56:09.366827",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "bending_amount",
+  "nationality"
+ ],
+ "fields": [
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nationality"
+  },
+  {
+   "fieldname": "bending_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Bending Amount",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-30 11:08:49.041153",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Showroom _child",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

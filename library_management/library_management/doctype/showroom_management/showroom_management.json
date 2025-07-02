@@ -1,0 +1,133 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "SM-.###",
+ "creation": "2025-06-26 15:24:29.111363",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "bike_on_road_price_section",
+  "customer_name",
+  "age",
+  "driving_licence",
+  "call",
+  "stream_link",
+  "bike_onroad_price",
+  "column_break_mvmw",
+  "advance_payment",
+  "bike_name",
+  "expected_delivery_date",
+  "for_more_details",
+  "section_break_caxw",
+  "details",
+  "address"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age"
+  },
+  {
+   "fieldname": "column_break_mvmw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "advance_payment",
+   "fieldtype": "Currency",
+   "label": "Advance Payment"
+  },
+  {
+   "fieldname": "bike_name",
+   "fieldtype": "Data",
+   "label": "Bike Name"
+  },
+  {
+   "fieldname": "section_break_caxw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "driving_licence",
+   "fieldtype": "Select",
+   "label": "Driving Licence",
+   "options": "\nYes\nNo",
+   "placeholder": "--select--"
+  },
+  {
+   "fieldname": "expected_delivery_date",
+   "fieldtype": "Date",
+   "label": "Expected Delivery Date"
+  },
+  {
+   "fieldname": "call",
+   "fieldtype": "Phone",
+   "label": "Call"
+  },
+  {
+   "fieldname": "for_more_details",
+   "fieldtype": "Barcode",
+   "label": "Aadhar Number"
+  },
+  {
+   "fieldname": "stream_link",
+   "fieldtype": "Data",
+   "label": "Stream Link"
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Table",
+   "label": "Details",
+   "options": "Showroom _child"
+  },
+  {
+   "fieldname": "bike_on_road_price_section",
+   "fieldtype": "Section Break",
+   "label": "Bike On Road Price"
+  },
+  {
+   "fieldname": "bike_onroad_price",
+   "fieldtype": "Currency",
+   "label": "Bike Onroad Price"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-06-30 11:05:06.499755",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Showroom management",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

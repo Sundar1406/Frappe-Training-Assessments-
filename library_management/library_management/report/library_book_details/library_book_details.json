@@ -1,0 +1,58 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [
+  {
+   "fieldname": "name",
+   "fieldtype": "Data",
+   "label": "Article Name",
+   "width": 500
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "width": 100
+  }
+ ],
+ "creation": "2025-06-17 17:52:25.413466",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "default": "Select\n",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "mandatory": 0,
+   "options": "\nAvailable\nIssued",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2025-06-26 14:59:14.965169",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Library Book Details",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \n   A.name,A.status\n   \nFROM \n    `tabArticle` AS A\nWHERE\n   1=1 AND A.status = %(status)s",
+ "ref_doctype": "Article",
+ "report_name": "Library Book Details",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Librarian"
+  },
+  {
+   "role": "Library Member"
+  }
+ ],
+ "timeout": 0
+}

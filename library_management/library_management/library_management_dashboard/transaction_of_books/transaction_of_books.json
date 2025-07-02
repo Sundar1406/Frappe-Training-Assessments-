@@ -1,0 +1,32 @@
+{
+ "cards": [
+  {
+   "card": "Books"
+  },
+  {
+   "card": "Books"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Transaction in Library",
+   "width": "Full"
+  },
+  {
+   "chart": "Transaction in Library",
+   "width": "Full"
+  }
+ ],
+ "creation": "2025-06-26 11:19:50.087594",
+ "dashboard_name": "Transaction of books",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2025-06-26 12:07:30.127461",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Transaction of books",
+ "owner": "Administrator"
+}
