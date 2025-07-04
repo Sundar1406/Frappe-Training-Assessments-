@@ -5,6 +5,7 @@ app_description = "Library Management"
 app_email = "admin@gmail.com"
 app_license = "mit"
 
+
 # Apps
 # ------------------
 
@@ -241,4 +242,9 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+
+doctype_list_js = {
+    "Library Transaction": "public/js/library_transaction_list.js"
+}
+
 

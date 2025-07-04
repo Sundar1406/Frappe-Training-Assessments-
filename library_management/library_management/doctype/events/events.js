@@ -2,6 +2,105 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Events", {
+    refresh(frm) {
+
+        // // Events
+        // // frm.refresh_field("theater")
+        // hii=frm.set_value("theater","kamala")
+        // console.log(hii);
+        
+
+    //     frm.set_value('theater','promise')
+    //     .then(()=>{                                       // USING PROMISE
+    //     frappe.msgprint("Promise value mathod is called")
+    // }
+// )
+
+// // Refresh  with button
+// frm.add_custom_button("Refresh",()=>{
+//     frm.refresh();
+//     frappe.msgprint("Refreshed")
+// });
+
+// // Save
+// frm.add_custom_button("My Save",()=>{
+//     frm.save();
+//     frm.set_value('theater','Sundar')
+//     frappe.show_alert({
+//         message:('Your Message is saved with some restrication'),
+//         indicator:'green'
+//     },5);
+// })
+
+// // Submit
+
+// frm.add_custom_button("My Submit",()=>{
+//     frm.save("Submit");
+//     frm.set_value('status','Booked')
+//     frappe.show_alert({
+//         message:('Your Ticket are Booked Successfully'),
+//         indicator:'green'
+//     },5)
+// })
+
+// //Cancel
+// frm.add_custom_button("My Cancel",()=>{
+//     frm.save("Cancel")
+//     frm.set_value('status','Cancelled')
+//     frappe.show_alert( {
+//         message:('Your Ticket is Cancelled'),
+//         indicator:'red'
+//     }, 5);
+// });
+
+//Update
+frm.add_custom_button('My Update',()=>{
+    frm.save('Update');
+    frm.set_value('status','Waiting')
+    frappe.show_alert({
+        message:('Your Ticket is in Waiting List'),
+        indicator:'orange'
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // frm.add_custom_button("Create", function () {
+        //     frm.call({
+        //         method: "movieName", //library_management.library_management.doctype.events.movieName
+        //         doc: frm.doc,
+        //         callback: function (r) {
+        //             if (r.message) {
+        //                 console.log(r.message)
+        //                 frappe.msgprint({
+        //                     title: __('Notification'),
+        //                     indicator: 'green',
+        //                     message: __('Document updated successfully' + r.message)
+        //                 });
+        //             }
+        //         }
+
+        //     })
+        //     console.log("button clicked")
+        // });
+    }
+
+})
     // //nama ena pana poromao adhuku adhu munadi edha pota initial ah msg ah type agum------1
     // setup: function(self) {
     //     frappe.msgprint("Setup: Triggered once when form is created for the first time");},
@@ -61,16 +160,16 @@ frappe.ui.form.on("Events", {
     //      frappe.msgprint("timeline_refresh: Triggered once when form is created for the first time");},
 
     // {fieldname}	
-    movie_name: frm =>{
-        if(frm.doc.movie_name){
-            frm.set_value('theater', 'Vetri').then(()=>{
-                frappe.msgprint("Theatre")
-            })
-        }
-    }
-})
+//     movie_name: frm =>{
+//         if(frm.doc.movie_name){
+//             frm.set_value('theater', 'Vetri').then(()=>{
+//                 frappe.msgprint("Theatre")
+//             })
+//         }
+//     }
+// })
 
-
+ 
 
 
 
@@ -100,4 +199,4 @@ frappe.ui.form.on("Events", {
 //             console.log("button clicked")
 //         });
 //     }
-// });
+// })

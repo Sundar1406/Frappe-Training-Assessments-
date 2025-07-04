@@ -1,9 +1,8 @@
-// Copyright (c) 2025, admin and contributors
-// For license information, please see license.txt
-
-   frappe.ui.form.on("Library Transaction", {
-    refresh(frm) {
-        let btn = [
+frappe.listview_settings['Library Transaction'] = {
+    onload(listview) {
+        
+        
+        let buttons = [
             {
                 label: "📚 Article",
                 action: () => frappe.set_route('List', 'Article')
@@ -22,9 +21,8 @@
             }
         ];
 
-        btn.forEach(item => {
-            frm.add_custom_button(item.label, item.action, '📂 Click All');
+        buttons.forEach(btn => {
+            listview.page.add_inner_button(btn.label, btn.action, '📂 Click All');
         });
     }
-});
-
+};

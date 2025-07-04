@@ -6,8 +6,13 @@ from frappe.model.document import Document
 
 
 class StudentServer(Document):
-    def after_save(self):
-        frappe.msgprint("Hii da")
+    def validate(self):
+        try:
+            frappe.db.sl("""SELECT * FROM `tabFakeTable`""")
+        except Exception as e:
+            error_message = frappe.get_traceback()
+            frappe.log_error(error_message, "Intentional Validation Error")
+            frappe.msgprint(f"❌ Error occurred:\n<pre>{str(e)}</pre>")
 
     # Before Save - change pana pana wrk agum
     # def before_save(self):
@@ -71,3 +76,4 @@ class StudentServer(Document):
 
 
 
+            

@@ -7,6 +7,7 @@
  "field_order": [
   "movie_name",
   "theater",
+  "status",
   "column_break_duyb",
   "count",
   "ticket_price",
@@ -48,12 +49,20 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nBooked\nWaiting\nCancelled",
+   "placeholder": "--select--"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-07-02 11:39:38.020993",
+ "modified": "2025-07-04 19:36:20.584810",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Events",
