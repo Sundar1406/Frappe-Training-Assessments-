@@ -3,11 +3,7 @@
 
 # import frappe
 from frappe.model.document import Document
-from frappe import _  # for translation support
-
-class FoodOrder(Document):
-    pass
 
 
-
-    
+class OrderBill(Document):
+	pass

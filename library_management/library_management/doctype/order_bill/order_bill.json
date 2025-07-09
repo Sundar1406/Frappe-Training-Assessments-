@@ -1,98 +1,76 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "FO .####",
- "creation": "2025-06-30 15:16:28.921990",
+ "autoname": "Bill.#####",
+ "creation": "2025-07-07 10:55:31.863415",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "name1",
   "delivery_address",
-  "column_break_ncfm",
+  "column_break_anbt",
   "select_items",
   "item_price",
   "quantity",
   "total_amount",
-  "section_break_lpfd",
-  "food_child",
-  "select_your_location",
-  "order_summary_chart"
+  "section_break_qqlf",
+  "food_child"
  ],
  "fields": [
   {
    "fieldname": "name1",
    "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Name",
-   "reqd": 1
+   "label": "Name"
   },
   {
    "fieldname": "delivery_address",
    "fieldtype": "Small Text",
-   "label": "Delivery Address",
-   "placeholder": "--Click the Show Map--"
+   "label": "Delivery Address"
   },
   {
-   "fieldname": "column_break_ncfm",
+   "fieldname": "column_break_anbt",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "select_items",
    "fieldtype": "Select",
    "label": "Select Items",
-   "options": "\nButter Chicken with Naan\nChicken Biryani\nPaneer Butter Masala\nChicken Fried Rice\nDal Tadka with Jeera Rice",
-   "placeholder": "--select--"
+   "options": "\nButter Chicken with Naan\nChicken Biryani\nPaneer Butter Masala\nChicken Fried Rice\nDal Tadka with Jeera Rice"
+  },
+  {
+   "fieldname": "item_price",
+   "fieldtype": "Currency",
+   "label": "Item Price"
   },
   {
    "fieldname": "quantity",
    "fieldtype": "Select",
    "label": "Quantity",
-   "options": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10",
-   "placeholder": "--select--"
+   "options": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
   },
   {
-   "default": "0.00",
    "fieldname": "total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount",
-   "read_only": 1
+   "label": "Total Amount"
   },
   {
-   "default": "0.00",
-   "fieldname": "item_price",
-   "fieldtype": "Currency",
-   "label": "Item Price",
-   "read_only": 1
-  },
-  {
-   "fieldname": "select_your_location",
-   "fieldtype": "Geolocation",
-   "label": "Select Your Location"
+   "fieldname": "section_break_qqlf",
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "food_child",
    "fieldtype": "Table",
    "label": "Food Child",
    "options": "Food Order Child"
-  },
-  {
-   "fieldname": "section_break_lpfd",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "order_summary_chart",
-   "fieldtype": "HTML",
-   "label": "Order Summary Chart",
-   "options": "<div id=\"order_summary_chart_wrapper\" style=\"min-height: 300px;\"></div>\n"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-08 20:36:42.326003",
+ "modified": "2025-07-07 15:07:32.055504",
  "modified_by": "Administrator",
  "module": "Library Management",
- "name": "Food Order",
+ "name": "Order Bill",
  "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [

@@ -22,3 +22,6 @@ class Showroommanagement(Document):
 def out():
     frappe.msgprint("This is out of the class")
     return"This is out of the class"
+
+
+

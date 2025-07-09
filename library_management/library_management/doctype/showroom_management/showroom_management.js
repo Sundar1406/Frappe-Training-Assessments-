@@ -47,7 +47,7 @@ frappe.ui.form.on('Showroom management', {
 
 
 
-
+// // Button Practcing
     //     // Calling an api inside the doctype class. using frm.call
     //     frm.add_custom_button("Click1",()=>{
     //         frm.call("welcome");
@@ -79,7 +79,7 @@ frappe.ui.form.on('Showroom management', {
 
 
 
-
+// //Update Automatic When the given items are trigered
 
 // 	advance_payment(frm) {
 // 	    result(frm);
