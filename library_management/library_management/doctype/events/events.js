@@ -4,23 +4,23 @@
 frappe.ui.form.on("Events", {
     refresh(frm) {
 
-        // // Events
-        // // frm.refresh_field("theater")
-        // hii=frm.set_value("theater","kamala")
-        // console.log(hii);
+        // Events
+        // frm.refresh_field("theater")
+        hii=frm.set_value("theater","kamala")
+        console.log(hii);
         
 
-    //     frm.set_value('theater','promise')
-    //     .then(()=>{                                       // USING PROMISE
-    //     frappe.msgprint("Promise value mathod is called")
-    // }
-// )
+        frm.set_value('theater','Kamala')
+        .then(()=>{                                       // USING PROMISE
+        frappe.msgprint("Promise value mathod is called")
+    }
+)
 
-// // Refresh  with button
-// frm.add_custom_button("Refresh",()=>{
-//     frm.refresh();
-//     frappe.msgprint("Refreshed")
-// });
+// Refresh  with button
+frm.add_custom_button("Refresh",()=>{
+    frm.refresh();
+    frappe.msgprint("Refreshed")
+});
 
 // // Save
 // frm.add_custom_button("My Save",()=>{

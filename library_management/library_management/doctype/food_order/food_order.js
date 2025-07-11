@@ -1,6 +1,3 @@
-// Copyright (c) 2025, admin and contributors
-// For license information, please see license.txt
-
 frappe.ui.form.on('Food Order', {
 
     // ----------------------------- Geolocation Mapping to Address -----------------------------
@@ -36,8 +33,31 @@ frappe.ui.form.on('Food Order', {
             frm.set_df_property('select_your_location', 'hidden', 0);
             frm.refresh_field('select_your_location');
         });
-         frm.add_custom_button('Show Order Chart', () => {
-            draw_order_chart(frm);
+
+        // frm.add_custom_button('Show Order Chart', () => {
+        //     draw_order_chart(frm);
+        // });
+
+    //----------------------------- Scan Api -----------------------------
+        frm.add_custom_button('Scan To Pay / Wifi', () => {
+            new frappe.ui.Scanner({
+                dialog: true,
+                multiple: false,
+                on_scan(data) {
+                    const scanned_value = data.decodedText;
+                    console.log("Scanned Data:", scanned_value);
+
+                    const is_external = scanned_value;
+                    const link_html = `<a href="${scanned_value}"${is_external ? 'target="_blank"' : ''}style="color: blue; text-decoration: underline;">
+                    Go to Scanned Link </a>`;
+                    frappe.msgprint({
+                        title: "Scanned Code",
+                        indicator: "green",
+                        message: `Scanned Value: <b>${scanned_value}</b><br><br>
+                            ${link_html}`
+                    });
+                }
+            });
         });
     },
 
@@ -82,41 +102,6 @@ frappe.ui.form.on('Food Order', {
         }
     }
 });
-
-// ---------------------------------- 🔸 Dashboard Function (outside) ----------------------------------
- function draw_order_chart(frm) {
-    const foodItems = [];
-    const totalAmounts = [];
-
-    (frm.doc.food_child || []).forEach(row => {
-        foodItems.push(row.food_name || "Unnamed");
-        totalAmounts.push(row.total_amount || 0);
-    });
-
-    if (frm.fields_dict.order_summary_chart) {
-        $(frm.fields_dict.order_summary_chart.wrapper).empty();
-
-        new frappe.Chart(frm.fields_dict.order_summary_chart.wrapper, {
-            title: "Order Total by Item",
-            data: {
-                labels: foodItems,
-                datasets: [
-                    {
-                        name: "Total ₹",
-                        chartType: 'bar',
-                        values: totalAmounts
-                    }
-                ]
-            },
-            type: 'bar',
-            height: 250,
-            colors: ['#5e64ff']
-        });
-    } else {
-        frappe.msgprint(__('Please add a Custom HTML field with fieldname "order_summary_chart".'));
-    }
-}
-
 
 // ---------------------------------- Child Table Script ----------------------------------
 

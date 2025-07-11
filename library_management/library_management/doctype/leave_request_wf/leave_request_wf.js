@@ -23,16 +23,13 @@ frappe.ui.form.on("Leave request WF", {
 //     }
 // })
 //---------------------------------------Set Route----------------------------------------------------
-        // frm.add_custom_button('Set Route',()=>{
-        //     // frappe.set_route('List','Food Order','List')     //--------navigate one doc Type to another
-        //     // frappe.set_route(['List','Leave request WF','Esakki'])  //------To rout the particular rec
-        //     // frappe.set_route('list', 'Leave request WF', filter={"status":'Approved by MD'});  //------filtering
-        // })
-    // }
+        frm.add_custom_button('Set Route',()=>{
+            // frappe.set_route('List','Food Order','List')     //--------navigate one doc Type to another
+            frappe.set_route(['List','Leave request WF'  ])  //------To rout the particular rec
+            // frappe.set_route('list', 'Leave request WF', filter={"status":'Approved by MD'});  //------filtering
+        })
+    }
     //------------------------------------------------------------------------------------------------------
-// frm.add_custom_button("insert",()=>{
-//     frappe.db.inser
-// })
 
 }
-})
+)

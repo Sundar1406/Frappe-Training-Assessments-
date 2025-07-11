@@ -149,23 +149,30 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"library_management.tasks.all"
-# 	],
-# 	"daily": [
-# 		"library_management.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"library_management.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"library_management.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"library_management.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+    "cron": {
+         "* * * * *": [
+             "library_management.tasks.cron"
+         ]
+    },
+    
+    
+	"all": [
+		"library_management.tasks.all"
+	],
+	"daily": [
+		"library_management.tasks.daily"
+	],
+	"hourly": [
+		"library_management.tasks.hourly"
+	],
+	"weekly": [
+		"library_management.tasks.weekly"
+	],
+	"monthly": [
+		"library_management.tasks.monthly"
+	],
+}
 
 # Testing
 # -------
@@ -246,5 +253,21 @@ app_license = "mit"
 doctype_list_js = {
     "Library Transaction": "public/js/library_transaction_list.js"
 }
+
+# --------------------------------Chart----------------------------------------
+
+doctype_list_js = {
+    "Student Marks": "public/js/student_marks_list.js"
+}
+
+
+
+
+
+
+
+
+
+
 
 

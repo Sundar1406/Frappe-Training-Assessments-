@@ -9,7 +9,7 @@ class LeaverequestWF(Document):
 #---------------------------------------------------Get Route the data----------------------------------------------------------
 @frappe.whitelist()
 def get_route(emp_id):
-    frappe.log_error(emp_id)
+                
     
     getRout = frappe.get_doc('Leave request WF', emp_id)
     return{

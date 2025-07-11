@@ -6,18 +6,18 @@ from frappe.model.document import Document
 
 
 class StudentServer(Document):
-    def validate(self):
-        try:
-            frappe.db.sl("""SELECT * FROM `tabFakeTable`""")
-        except Exception as e:
-            error_message = frappe.get_traceback()
-            frappe.log_error(error_message, "Intentional Validation Error")
-            frappe.msgprint(f"❌ Error occurred:\n<pre>{str(e)}</pre>")
+    # def validate(self):
+        # try:
+        #     frappe.db.sl("""SELECT * FROM `tabFakeTable`""")
+        # except Exception as e:
+        #     error_message = frappe.get_traceback()
+        #     frappe.log_error(error_message, "Intentional Validation Error")
+        #     frappe.msgprint(f"❌ Error occurred:\n<pre>{str(e)}</pre>")
 
     # Before Save - change pana pana wrk agum
-    # def before_save(self):
-    #     if self.first_name and self.last_name:
-    #         self.full_name= self.first_name +" "+self.last_name
+    def before_save(self):
+        if self.first_name and self.last_name:
+            self.full_name= self.first_name +" "+self.last_name
     
     # # After Save - save button click panadhum work agum
     # def after_save(self):

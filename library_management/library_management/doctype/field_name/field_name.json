@@ -22,23 +22,24 @@
   "icon",
   "age",
   "percent",
-  "html",
   "json",
   "attach_image_djlh",
   "rating",
   "auto_complete",
+  "html_ed",
   "column_break_yjzi",
   "choose_any_color",
   "salary",
   "table",
   "duration",
   "select",
-  "dynamic_link",
   "image",
   "sundar_mariappan",
   "skip",
   "rating_pmwm",
   "link",
+  "dynamic_link",
+  "child_doc",
   "column_break_iygs",
   "find_your_place_map",
   "mark_down_editer",
@@ -195,12 +196,6 @@
    "options": "link"
   },
   {
-   "fieldname": "html",
-   "fieldtype": "HTML",
-   "label": "HTML",
-   "options": "HTML\n"
-  },
-  {
    "fieldname": "json",
    "fieldtype": "JSON",
    "label": "Json"
@@ -250,12 +245,23 @@
    "fieldname": "color",
    "fieldtype": "Color",
    "label": "color"
+  },
+  {
+   "fieldname": "html_ed",
+   "fieldtype": "HTML Editor",
+   "label": "HTML Ed"
+  },
+  {
+   "fieldname": "child_doc",
+   "fieldtype": "Table MultiSelect",
+   "label": "Child Doc",
+   "options": "Food Order Child"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-26 12:26:50.628182",
+ "modified": "2025-07-11 15:37:43.927405",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Field name",
