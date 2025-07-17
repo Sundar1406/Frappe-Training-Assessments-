@@ -1,7 +1,58 @@
 frappe.ui.form.on('Food Order', {
 
-    // ----------------------------- Geolocation Mapping to Address -----------------------------
-    select_your_location(frm) {
+    // ----------------------------- Refresh -----------------------------
+    refresh(frm) {
+        // Hide location field initially
+        frm.set_df_property('select_your_location', 'hidden', 1);
+        frm.refresh_field('select_your_location');
+
+        // Show map button
+        frm.add_custom_button('Show Map', () => {
+            frm.set_df_property('select_your_location', 'hidden', 0);
+            frm.refresh_field('select_your_location');
+        });
+
+        // QR Code Scan Button
+        frm.add_custom_button('Scan To Pay / WIFI', () => {
+            if (!(frappe.ui && frappe.ui.Scanner)) {
+                frappe.msgprint(__('Scanner Component is not found.'));
+                return;
+            }
+
+            new frappe.ui.Scanner({
+                dialog: true,
+                multiple: false,
+                on_scan(data) {
+                    const scanned_value = data.decodedText || '';
+                    console.log('Scanned Data:', scanned_value);
+
+                    const is_upi = scanned_value.startsWith("upi://");
+                    const is_url = /^https?:\/\//i.test(scanned_value.trim());
+
+                    if (is_upi || is_url) {
+                        frappe.confirm(
+                            `Proceed to payment using:<br><b>${scanned_value}</b>`,
+                            () => {
+                                window.open(scanned_value, '_blank');  // Redirect
+                            },
+                            () => {
+                                frappe.msgprint("Payment cancelled.");
+                            }
+                        );
+                    } else {
+                        frappe.msgprint({
+                            title: "Scanned Code",
+                            indicator: "orange",
+                            message: `Scanned: <b>${frappe.utils.escape_html(scanned_value)}</b><br>This is not a valid payment link.`,
+                        });
+                    }
+                }
+            });
+        });
+    },
+
+    // ----------------------------- Geolocation Mapping -----------------------------
+     select_your_location(frm) {
         let mapdata = JSON.parse(frm.doc.select_your_location || '{}')?.features?.[0];
 
         if (mapdata && mapdata.geometry?.type === 'Point') {
@@ -23,45 +74,7 @@ frappe.ui.form.on('Food Order', {
             });
         }
     },
-
-    // ----------------------------- Refresh -----------------------------
-    refresh(frm) {
-        frm.set_df_property('select_your_location', 'hidden', 1);
-        frm.refresh_field('select_your_location');
-
-        frm.add_custom_button('Show Map', () => {
-            frm.set_df_property('select_your_location', 'hidden', 0);
-            frm.refresh_field('select_your_location');
-        });
-
-        // frm.add_custom_button('Show Order Chart', () => {
-        //     draw_order_chart(frm);
-        // });
-
-    //----------------------------- Scan Api -----------------------------
-        frm.add_custom_button('Scan To Pay / Wifi', () => {
-            new frappe.ui.Scanner({
-                dialog: true,
-                multiple: false,
-                on_scan(data) {
-                    const scanned_value = data.decodedText;
-                    console.log("Scanned Data:", scanned_value);
-
-                    const is_external = scanned_value;
-                    const link_html = `<a href="${scanned_value}"${is_external ? 'target="_blank"' : ''}style="color: blue; text-decoration: underline;">
-                    Go to Scanned Link </a>`;
-                    frappe.msgprint({
-                        title: "Scanned Code",
-                        indicator: "green",
-                        message: `Scanned Value: <b>${scanned_value}</b><br><br>
-                            ${link_html}`
-                    });
-                }
-            });
-        });
-    },
-
-    // ----------------------------- Select Items -----------------------------
+    // ----------------------------- Item Selection -----------------------------
     select_items(frm) {
         const itemPrices = {
             "Butter Chicken with Naan": 250,
@@ -103,21 +116,13 @@ frappe.ui.form.on('Food Order', {
     }
 });
 
-// ---------------------------------- Child Table Script ----------------------------------
-
+// ----------------------------- Child Table Script -----------------------------
 frappe.ui.form.on('Food Order Child', {
-
     food_child_add: function (frm, cdt, cdn) {
         let row = locals[cdt][cdn];
         frappe.msgprint("Your content is added");
-        row.our_rules = "Hi Enjoy Your Dish";
         row.todays_offer = "35";
         row.our_duration = "02:03:00";
         frm.refresh_field("food_child");
     }
-
-    // You can enable the below if needed:
-    // food_child_remove: function(frm, cdt, cdn) { ... }
-    // food_child_move: function(frm, cdt, cdn) { ... }
-    // form_render: function(frm, cdt, cdn) { ... }
 });

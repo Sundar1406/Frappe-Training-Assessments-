@@ -1,0 +1,108 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<h2 class="mb-4">Jinja API</h2>
+
+<table class="table table-bordered">
+    <thead class="table-light">
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Created By</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for doc in jinja_api %}
+        <tr>
+            <td>{{ doc.title }}</td>
+            <td>{{ doc.description }}</td>
+            <td>{{ frappe.format(doc.status, {'fieldtype':'Data'}) }}</td>
+            <td>{{ doc.created_by }}</td>
+            <td>{{ frappe.format_date(doc.date) }}</td>    
+            <!-- <td>{{frappe.format(doc.date)}}</td> -->
+        </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+<!------------------------------------------frappe.format------------------------------------------------>
+
+<!-- {% for doc in jinja_api %}
+ <span>{{ frappe.format(doc.date) }}</span><br>
+{% endfor %}  -->
+
+<!------------------------------------------frappe.format_date------------------------------------------->
+
+<!-- {% for doc in jinja_api %}
+<span> {{ frappe.format_date(doc.date) }}</span><br>
+{% endfor %} -->
+
+<!--------------------------------------------frappe.get_ur---------------------------------------------->
+
+<!-- <span>{{ frappe.get_url() }}</span> -->
+
+
+<!--------------------------------------------frappe.get_doc--------------------------------------------->
+<!-- 
+{% set doc = frappe.get_doc("Jinja API", "Caldwell") %}
+<span>{{doc.title}} - {{doc.status}} - {{doc.created_by}}</span> -->
+
+<!--------------------------------------------frappe.get_all -------------------------------------------->
+
+<!-- {% set task = frappe.get_all('Jinja API', filters={'status':'Archived'},
+fields=['title','created_by'],order_by ='date asc') %}
+{% for t in task %}
+<span>Title:{{t.title}}</span><br>
+<span>Due Date: {{ frappe.format_date(t.date) }}</span><br>
+{% endfor %} -->
+
+<!--------------------------------------------frappe.db.get_value-------------------------------------------->
+
+<!-- {% set task = frappe.db.get_value("Jinja API", "Caldwell", "status")%}
+<h1>{{task}}</h1> -->
+
+<!--------------------------------------------frappe.db.get_value multi-------------------------------------------->
+
+<!-- {%set task,date = frappe.db.get_value('Jinja API','Caldwell',['title','date'])%}
+<h1>{{task}}</h1><br>
+<span>{{frappe.format(date)}}</span> -->
+
+<!--------------------------------------------frappe.get_system_settings-------------------------------------------->
+
+<!-- {% if frappe.get_system_settings('country') == 'India'%}
+<p>Yes this is India</p>
+{%else%}
+<p>No this is India</p>
+{%endif%} -->
+
+<!--------------------------------------------frappe.get_meta-------------------------------------------->
+<!-- You can access all the fields, field types, labels, etc., 
+ defined in the DocType — without querying the actual data (database records) -->
+
+ <!-- {%set task = frappe.get_meta("Jinja API")%}
+ Task has {{task.fields | count}} fields
+
+<ul>
+    {% for field in task.fields %}
+    <li>{{ field.fieldname }} ({{ field.fieldtype }})</li>
+    {% endfor %}
+</ul>
+
+ {% if task.get_field('status')%}
+ It is also has a status field
+ {% endif %} -->
+
+ <!--------------------------------------------frappe.get_fullname-------------------------------------------->
+
+<!-- {{ frappe.render_template("Hello {{title}}!", {"title": "Sundar"}) }} -->
+
+ <!-----------------------------------------------frappe._------------------------------------------------>
+ 
+<!-- {{ frappe._('This string should get translated') }} -->
+
+
+
+{% endblock %}
+

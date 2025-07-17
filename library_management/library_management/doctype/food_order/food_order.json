@@ -7,6 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
+  "email_address",
+  "phone_number",
   "delivery_address",
   "column_break_ncfm",
   "select_items",
@@ -85,12 +87,22 @@
    "fieldtype": "HTML",
    "label": "Order Summary Chart",
    "options": "<div id=\"order_summary_chart_wrapper\" style=\"min-height: 300px;\"></div>\n"
+  },
+  {
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "label": "Email Address"
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Phone",
+   "label": "Phone Number"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-11 12:38:32.300170",
+ "modified": "2025-07-17 13:23:46.462753",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Food Order",

@@ -40,14 +40,14 @@ class DocumentAPI(Document):
 # --------------------------------farppe.delete_doc-----------------------------------
 
 # def myDoc():
-#     frappe.delete_doc("Document API" "Raghu")
+#     frappe.delete_doc("Document API" , "Raghu")
 #     return "Your Document is deleted"
 
 # ---------------------------------frappe.rename_doc-----------------------------------
 
 
 # def myDoc():
-#     frappe.rename_doc("Document API" , " Sundar " , " Gurusundar")
+#     frappe.rename_doc("Document API" , "Gurusundar" , "Sundar")
 #     return "Rename is done"
 
 
@@ -75,16 +75,51 @@ class DocumentAPI(Document):
 #     return doc.name
 
 # ----------------------------------------------Append--------------------------------------------------
-def myDoc():
-    doc = frappe.get_doc("Document API", 'Rani')
-    doc.append('details',{
-        "age" :  "23",
-        "field": "Nellai"
-    })
-    doc.save()
-    frappe.db.commit()
-    return f" child is updated {doc.name} "
+
+
+# def myDoc():
+#     doc = frappe.get_doc( "Document API", "Sudha" )
+#     doc.append( "details",{
+#         "age" : "45",
+#         "field" : "Manager"
+#     } )
+#     doc.save()
+#     frappe.db.commit()
+#     return f"Your Child Table is Updated {doc.name} "
+
+# ------------------------------------------------doc.get_url -------------------------------------------
+
+# def myDoc():
+#     doc = frappe.get_doc( "Document API", 'Sundar')
+#     url = doc.get_url()
     
+#     return url
+
+# ------------------------------------------------  doc.add_comment ---------------------------------------
+
+# def myDoc():
+#     doc = frappe.get_doc( "Document API" , 'Sundar')
+#     doc.add_comment("Comment", "Hii this is Khaira")
+    
+#     return "Success"
+
+# ------------------------------------------------- doc.add_seen -----------------------------------------
+# def myDoc():
+#     doc = frappe.get_doc("Document API", "Sundar")
+#     doc.add_seen()
+    
+#     seen_by = getattr(doc, "_seen_by", [])      
+
+#     return {
+#         "message": "Added seen successfully",
+#         "seen_by": seen_by
+#     }
+    
+# ------------------------------------------------- doc.add_viewed ---------------------------------------
+# def myDoc():
+#     doc = frappe.get_doc("Document API", "Sundar")
+#     doc.add_viewed()
+#     return f"Total views: {doc.total_views}"
 
 
 
