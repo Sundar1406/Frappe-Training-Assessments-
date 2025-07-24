@@ -13,7 +13,10 @@ frappe.ui.form.on("Order Bill", {
                             title: 'Scan The QR',
                             message: `
                                 <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                                    <img src="${r.message}" alt="Black and white QR code for UPI payment to mgsundar2001-1 at oksbi, displayed in a bordered square on a plain background. No additional text or graphics are present. The environment is a digital payment interface with a neutral and functional tone." style="width:200px;height:200px; border:1px solid #ccc; margin-bottom: 12px;">
+                                    <img src="${r.message}" alt="Black and white QR code for UPI payment to mgsundar2001-1 at oksbi, 
+                                    displayed in a bordered square on a plain background. No additional text or graphics are present. 
+                                    The environment is a digital payment interface with a neutral and functional tone." 
+                                    style="width:200px;height:200px; border:1px solid #ccc; margin-bottom: 12px;">
                                 </div>
                             `
                         });

@@ -1,12 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "Bill.#####",
+ "autoname": "format:Chill, Bill{###}.",
  "creation": "2025-07-07 10:55:31.863415",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "name1",
+  "email_address",
+  "phone_number",
   "delivery_address",
   "column_break_anbt",
   "select_items",
@@ -20,12 +22,14 @@
   {
    "fieldname": "name1",
    "fieldtype": "Data",
-   "label": "Name"
+   "label": "Name",
+   "read_only": 1
   },
   {
    "fieldname": "delivery_address",
    "fieldtype": "Small Text",
-   "label": "Delivery Address"
+   "label": "Delivery Address",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_anbt",
@@ -35,23 +39,27 @@
    "fieldname": "select_items",
    "fieldtype": "Select",
    "label": "Select Items",
-   "options": "\nButter Chicken with Naan\nChicken Biryani\nPaneer Butter Masala\nChicken Fried Rice\nDal Tadka with Jeera Rice"
+   "options": "\nChicken Biriyani\nButter Chicken with Naan\nPaneer Butter Masala\nChicken Fried Rice\nVeg Fried Rice\nChicken Shawarma\nVeg Shawarma\nPaneer Tikka",
+   "read_only": 1
   },
   {
    "fieldname": "item_price",
    "fieldtype": "Currency",
-   "label": "Item Price"
+   "label": "Item Price",
+   "read_only": 1
   },
   {
    "fieldname": "quantity",
    "fieldtype": "Select",
    "label": "Quantity",
-   "options": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+   "options": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10",
+   "read_only": 1
   },
   {
    "fieldname": "total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount"
+   "label": "Total Amount",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_qqlf",
@@ -61,17 +69,30 @@
    "fieldname": "food_child",
    "fieldtype": "Table",
    "label": "Food Child",
-   "options": "Food Order Child"
+   "options": "Food Order Child",
+   "read_only": 1
+  },
+  {
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "label": "Email Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Phone",
+   "label": "Phone Number",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-07 15:07:32.055504",
+ "modified": "2025-07-19 16:10:31.054821",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Order Bill",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

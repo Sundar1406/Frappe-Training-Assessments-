@@ -1,0 +1,24 @@
+{
+ "content": null,
+ "creation": "2021-07-10 12:22:16.138485",
+ "docstatus": 0,
+ "doctype": "Page",
+ "icon": "http://127.0.0.1:8123/private/files/logo2-removebg-preview.png",
+ "idx": 0,
+ "modified": "2025-07-23 17:41:56.462358",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "print-format-builder-beta",
+ "owner": "Administrator",
+ "page_name": "print-format-builder-beta",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Food Order"
+}

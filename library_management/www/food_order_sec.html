@@ -1,0 +1,72 @@
+{% extends "templates/web.html" %}
+{% block page_content %}
+<script src="https://cdn.tailwindcss.com"></script>
+<div class="px-4 py-6 bg-gradient-to-br from-yellow-50 to-orange-100 min-h-screen pb-32">
+  <h1 class="text-4xl font-extrabold text-center text-orange-800 mb-10">🍽️ Select Your Delicious </h1>
+  <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
+    {% set food_items = [
+    {"name": "Chicken Biryani", "img": "files/Chicken_Biriyani.jpeg", "desc": "Freshly prepared with spices", "price":
+    "₹199"},
+    {"name": "Butter Chicken with Naan", "img": "/files/Butter Chicken with Naan org.jpg", "desc": "Rich & creamy
+    delight", "price": "₹249"},
+    {"name": "Paneer Butter Masala", "img": "/files/Paneer_Butter_Masala.jpg", "desc": "Vegetarian special", "price":
+    "₹189"},
+    {"name": "Chicken Fried Rice", "img": "files/Chicken_Fried_Rice.jpeg", "desc": "Non-Vegetarian special", "price":
+    "₹170"},
+    {"name": "Veg Fried Rice", "img": "files/Veg_Fried_Rice_org.jpg", "desc": "Vegetarian special", "price": "₹150"},
+    {"name": "Chicken Shawarma", "img": "files/Chicken_Shawarma.jpg", "desc": "Middle Eastern delight", "price":
+    "₹120"},
+    {"name": "Veg Shawarma", "img": "files/Veg_Shawarma.jpg", "desc": "Middle Eastern delight", "price": "₹100"},
+    {"name": "Paneer Tikka", "img": "files/Paneer_Tikka.jpg", "desc": "Grilled to perfection", "price": "₹180"}
+    ] %}
+    {% for item in food_items %}
+    <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition p-5 flex flex-col">
+      <div class="rounded-xl overflow-hidden mb-4 h-48">
+        <img src="{{ item.img }}" alt="{{ item.name }}" class="w-full h-full object-cover">
+      </div>
+      <div class="flex justify-between items-start">
+        <div>
+          <h2 class="text-lg font-semibold text-gray-800">{{ item.name }}</h2>
+          <p class="text-sm text-gray-500 mt-1">{{ item.desc }}</p>
+        </div>
+        <span class="bg-orange-100 text-orange-600 text-sm font-medium px-2 py-1 rounded-xl">{{ item.price }}</span>
+      </div>
+
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<!-- Button -->
+<div class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-xl z-50">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex justify-center">
+    <a href="http://127.0.0.1:8123/app/food-order/new-food-order-xjayfsnrfm"
+      class="bg-gradient-to-r from-red-500 to-orange-500 text-white font-bold py-3 px-8 rounded-full text-xl shadow-lg hover:scale-105 transition mt-2 no-underline" style="text-decoration: none;">
+      🍔 Proceed to Order
+    </a>
+    <style>
+      a:hover, a:focus {
+        text-decoration: none !important;
+      }
+    </style>
+    {% block script %}
+    <!-- <script>document.getElementById('proceed-order-btn').addEventListener('click', function (e) {
+  e.preventDefault();
+  
+  frappe.call({
+    method: "library_management.www.food_order.create_food_order",
+  
+    callback: function (r) {
+      if (r.message && r.message.url) {
+        window.location.href = r.message.url;
+      } else {
+        frappe.msgprint('Failed to create new order.');
+      }
+    }
+  });
+});
+    </script>
+  </div>
+</div>
+
+{% endblock %}
+{% endblock %} -->

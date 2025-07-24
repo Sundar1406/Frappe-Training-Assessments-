@@ -14,8 +14,7 @@ const data = {
     ]
 }
  
-const chart = new frappe.Chart("#chart", {  
-                                
+const chart = new frappe.Chart("#chart", {                              
     title: "My Awesome Chart",
     data: data,
     type: 'line',   

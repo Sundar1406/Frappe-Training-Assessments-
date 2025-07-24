@@ -1,0 +1,4 @@
+<h1>Hi, {{ get_fullname(frappe.session.user) }}</h1>
+<p>Your account balance is {{ 45000.52 | format_currency("INR") }}</p>
+<p>1+2 = {{ sum(1, 2) }}</p>
+<p>3*4 = {{ multiply(3, 4) }}</p>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 - Page Not Found</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #fff7ed, #fde68a);
+      color: #1f2937;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 100vh;
+      padding: 2rem;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    img {
+      max-width: 300px;
+      margin-bottom: 2rem;
+      animation: bounce 2.5s infinite;
+    }
+
+    h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #b91c1c;
+    }
+
+    p {
+      font-size: 1.25rem;
+      color: #374151;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    a {
+      background-color: #f97316;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #ea580c;
+      transform: scale(1.05);
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      img {
+        max-width: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="/files/logo2-removebg-preview.png" alt="404 Illustration" />
+  <h1>Oops! Page not found 😕</h1>
+  <p>The page you’re looking for might have been removed or temporarily unavailable. Try going back to the homepage.</p>
+  <a href="/app">🏠 Go Back Home</a>
+</body>
+</html>

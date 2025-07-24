@@ -149,30 +149,30 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-scheduler_events = {
-    "cron": {
-         "* * * * *": [
-             "library_management.tasks.cron"
-         ]
-    },
+# scheduler_events = {
+#     "cron": {
+#          "* * * * *": [
+#              "library_management.tasks.cron"
+#          ]
+#     },
     
     
-	"all": [
-		"library_management.tasks.all"
-	],
-	"daily": [
-		"library_management.tasks.daily"
-	],
-	"hourly": [
-		"library_management.tasks.hourly"
-	],
-	"weekly": [
-		"library_management.tasks.weekly"
-	],
-	"monthly": [
-		"library_management.tasks.monthly"
-	],
-}
+# 	"all": [
+# 		"library_management.tasks.all"
+# 	],
+# 	"daily": [
+# 		"library_management.tasks.daily"
+# 	],
+# 	"hourly": [
+# 		"library_management.tasks.hourly"
+# 	],
+# 	"weekly": [
+# 		"library_management.tasks.weekly"
+# 	],
+# 	"monthly": [
+# 		"library_management.tasks.monthly"
+# 	],
+# }
 
 # Testing
 # -------
@@ -249,6 +249,7 @@ scheduler_events = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+# ===================================================================================================================
 
 doctype_list_js = {
     "Library Transaction": "public/js/library_transaction_list.js"
@@ -259,6 +260,74 @@ doctype_list_js = {
 doctype_list_js = {
     "Student Marks": "public/js/student_marks_list.js"
 }
+
+# ---------------------------------hooks----------------------------------------
+
+app_include_js = "/assets/library_management/js/learning_hooks.js"
+
+# doctype_js = {
+#     "Learning_hooks": "public/js/learning_hooks.js"
+# }
+
+app_include_css = "/assets/library_management/css/hook_l.css"
+
+website_context = {
+    "brand_html": "<h1>Food Order🍔</h1>",
+    "favicon": "/assets/library_management/image/logo_2.png"
+}
+# ---------------------------------------Jinja customization- Doubt------------------------------------------
+jinja = {
+    "methods": [
+        "library_management.jinja_cus.method",
+        "library_management.utils.jinja_env.get_fullname",
+    ],
+    "filters": [
+        "library_management.jinja_cus.filters",
+        "library_management.utils.jinja_env.format_currency"
+    ]
+}
+
+#----------------------------------------------------Portal--------------------------------------------------
+
+web_include_css = "/assets/library_management/css/bg.css"
+
+#---------------------------------------------------Web Form-------------------------------------------------
+webform_include_css = {"Library Member": "/assets/library_management/css/webform.css"}
+
+#-----------------------------------------------------Sound---------------------------------------------------
+#Delete
+doctype_list_js = {
+    "Food Order": "public/js/food_sound.js"
+}
+#-------------------------------------------------Migrate Hooks-----------------------------------------------
+#Before & After Migrate
+
+before_migrate = "library_management.migrate_hooks.before&after_migrate.before_migrate"
+after_migrate = "library_management.migrate_hooks.before&after_migrate.after_migrate"
+
+#---------------------------------------------------Test Hooks-------------------------------------------------
+
+before_tests = "library_management.test_hooks.test.before_tests"
+#---------------------------------------------------File Hooks-------------------------------------------------
+
+doc_events = {
+    "Files" : {
+        "after_insert" : "library_management.file_hooks.file_hooks.on_file_uploaded",
+        "on_trash" : "library_management.file_hooks.file_hooks.on_file_deleted"
+    }
+}                    #----------------------Doubt
+
+
+#---------------------------------------------------Default Homepage----------------------------------------
+
+home_page = "food_order_sec"
+
+# Giving the permissions that who can see the page according the user
+role_home_page = {
+    "Sundar": "food_order_sec",
+    "Administrator": "Jinja%20API"
+}
+
 
 
 

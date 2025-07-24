@@ -177,13 +177,13 @@
    "fieldname": "auto_complete",
    "fieldtype": "Autocomplete",
    "label": "Auto Complete",
-   "options": "Tirunelveli\nTiruchendur\nThiruvannamalai\nTirutharavapundi"
+   "options": "\nTirunelveli\nTiruchendur\nThiruvannamalai\nTirutharavapundi"
   },
   {
    "fieldname": "select",
    "fieldtype": "Select",
    "label": "Select",
-   "options": "Article\nLibrary Member"
+   "options": "\nArticle\nLibrary Member"
   },
   {
    "fieldname": "column_break_iygs",

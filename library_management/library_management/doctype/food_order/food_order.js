@@ -12,6 +12,30 @@ frappe.ui.form.on('Food Order', {
             frm.refresh_field('select_your_location');
         });
 
+        //Print Bill
+   
+        frm.add_custom_button('Print Bill', () => {
+            // Check if the doc is saved
+            if (!frm.doc.__islocal) {
+                frappe.call({
+                    method: "library_management.library_management.doctype.order_bill.order_bill.create_order_bill",
+                    args: {
+                        food_order_name: frm.doc.name
+                    },
+                    callback: function (r) {
+                        if (r.message) {
+                            frappe.msgprint("Order created 👍🏻. Tap Payment to pay.");
+                            frappe.set_route("form", "Order Bill", r.message);
+                        }
+                    }
+                });
+            } else {
+                frappe.msgprint("Please save the Food Order before printing the bill.");
+            }
+        });
+
+
+
         // QR Code Scan Button
         frm.add_custom_button('Scan To Pay / WIFI', () => {
             if (!(frappe.ui && frappe.ui.Scanner)) {
@@ -51,6 +75,8 @@ frappe.ui.form.on('Food Order', {
         });
     },
 
+    
+
     // ----------------------------- Geolocation Mapping -----------------------------
      select_your_location(frm) {
         let mapdata = JSON.parse(frm.doc.select_your_location || '{}')?.features?.[0];
@@ -77,11 +103,14 @@ frappe.ui.form.on('Food Order', {
     // ----------------------------- Item Selection -----------------------------
     select_items(frm) {
         const itemPrices = {
-            "Butter Chicken with Naan": 250,
-            "Chicken Biryani": 180,
-            "Paneer Butter Masala": 200,
+            "Chicken Biriyani": 199,
+            "Butter Chicken with Naan": 249,
+            "Paneer Butter Masala": 189,
             "Chicken Fried Rice": 170,
-            "Dal Tadka with Jeera Rice": 160
+            "Veg Fried Rice": 150,
+            "Chicken Shawarma": 120,
+            "Veg Shawarma":100,
+            "Paneer Tikka":180
         };
 
         let selectedItem = frm.doc.select_items;
@@ -98,11 +127,14 @@ frappe.ui.form.on('Food Order', {
     // ----------------------------- Quantity Change -----------------------------
     quantity(frm) {
         const itemPrices = {
-            "Butter Chicken with Naan": 250,
-            "Chicken Biryani": 180,
-            "Paneer Butter Masala": 200,
+            "Chicken Biriyani": 199,
+            "Butter Chicken with Naan": 249,
+            "Paneer Butter Masala": 189,
             "Chicken Fried Rice": 170,
-            "Dal Tadka with Jeera Rice": 160
+            "Veg Fried Rice": 150,
+            "Chicken Shawarma": 120,
+            "Veg Shawarma":100,
+            "Paneer Tikka":180
         };
 
         let selectedItem = frm.doc.select_items;
@@ -126,3 +158,4 @@ frappe.ui.form.on('Food Order Child', {
         frm.refresh_field("food_child");
     }
 });
+

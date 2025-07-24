@@ -49,7 +49,7 @@
    "fieldname": "type",
    "fieldtype": "Select",
    "label": "Type",
-   "options": ["","Issue","Return"]
+   "options": "\nIssue\nReturn"
   },
   {
    "fieldname": "date",

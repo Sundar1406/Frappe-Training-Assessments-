@@ -62,6 +62,7 @@ def reverse_geocode(lat, lon):
 #  ----------------------------- Select Items -----------------------------
 
 
+
 # ----------------------------- Scan Api -----------------------------
 
 # def save_scanned_value(scanned_text, docname):
