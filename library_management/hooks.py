@@ -251,91 +251,130 @@ app_license = "mit"
 # }
 # ===================================================================================================================
 
-doctype_list_js = {
-    "Library Transaction": "public/js/library_transaction_list.js"
-}
-
-# --------------------------------Chart----------------------------------------
-
-doctype_list_js = {
-    "Student Marks": "public/js/student_marks_list.js"
-}
-
-# ---------------------------------hooks----------------------------------------
-
-app_include_js = "/assets/library_management/js/learning_hooks.js"
-
-# doctype_js = {
-#     "Learning_hooks": "public/js/learning_hooks.js"
+# doctype_list_js = {
+#     "Library Transaction": "public/js/library_transaction_list.js",
+#     # --------------------------------Chart----------------------------------------
+#     "Student Marks": "public/js/student_marks_list.js",
+#     #---------------------------------Sound----------------------------------------
+#     #Delete
+#     "Food Order": "public/js/food_sound.js"
 # }
 
-app_include_css = "/assets/library_management/css/hook_l.css"
 
-website_context = {
-    "brand_html": "<h1>Food Order🍔</h1>",
-    "favicon": "/assets/library_management/image/logo_2.png"
+
+
+# # ---------------------------------hooks----------------------------------------
+
+# app_include_js = "/assets/library_management/js/learning_hooks.js"
+
+# # doctype_js = {
+# #     "Learning_hooks": "public/js/learning_hooks.js"
+# # }
+
+# app_include_css = "/assets/library_management/css/hook_l.css"
+
+# website_context = {
+#     "brand_html": "<h1>Food Order🍔</h1>",
+#     "favicon": "/assets/library_management/image/logo_2.png"
+# }
+# # ---------------------------------------Jinja customization- Doubt------------------------------------------
+# jinja = {
+#     "methods": [
+#         "library_management.jinja_cus.method",
+#         "library_management.utils.jinja_env.get_fullname",
+#     ],
+#     "filters": [
+#         "library_management.jinja_cus.filters",
+#         "library_management.utils.jinja_env.format_currency"
+#     ]
+# }
+
+# #----------------------------------------------------Portal--------------------------------------------------
+
+# web_include_css = "/assets/library_management/css/bg.css"
+
+# #---------------------------------------------------Web Form-------------------------------------------------
+# webform_include_css = {"Library Member": "/assets/library_management/css/webform.css"}
+
+# #-------------------------------------------------Migrate Hooks-----------------------------------------------
+# #Before & After Migrate
+
+# before_migrate = "library_management.migrate_hooks.before&after_migrate.before_migrate"
+# after_migrate = "library_management.migrate_hooks.before&after_migrate.after_migrate"
+
+# #---------------------------------------------------Test Hooks-------------------------------------------------
+
+# before_tests = "library_management.test_hooks.test.before_tests"
+# #---------------------------------------------------File Hooks-------------------------------------------------
+
+# doc_events = {
+#     "Files" : {
+#         "after_insert" : "library_management.file_hooks.file_hooks.on_file_uploaded",
+#         "on_trash" : "library_management.file_hooks.file_hooks.on_file_deleted"
+#     }
+# }                    #----------------------Doubt
+
+
+# #---------------------------------------------------Default Homepage----------------------------------------
+
+# # home_page = "food_order_sec"
+
+# # # Giving the permissions that who can see the page according the user
+# # role_home_page = {
+# #     "Sundar": "food_order_sec",
+# #     "Administrator": "Jinja%20API"
+# # }
+
+# #----------------------------------------------------Boot Session--------------------------------------------
+
+# boot_session = "library_management.boot_info.boot.custom_boot_secssion"
+
+# #----------------------------------------------------Website Controller Context --------------------------------------------
+
+# extend_website_page_controller_context = {
+#     "library_management.www.404" : "library_management.pages.context_404"
+# }
+
+# #--------------------------------------------------Web pages with dynamic routes ---------------------------------
+
+# get_web_page_with_dynamic_routes = "wb_page_dynamic_rout.get_web_page_with_dynamic_routes"
+
+# #-------------------------------------------------------Website Redirects -------------------------------------
+
+# website_redirects = [
+#     {"source": "/FO", "target": "/food_order_sec"},
+#     {"source": "/food(/.*)?","target": "/food_order_sec"}
+# ]
+
+#------------------------------------------------------Website Path Resolver ----------------------------------
+
+# website_path_resolver = "library_management.path_resolve.resolve_path"
+
+#---------------------------------------------------------Scheular Events--------------------------------------
+
+schedular_events = {
+        "cron" : {
+            "* * * *": [
+                "library_management.tasks.cron"
+            ]
+        },
+        "all": [
+            "library_management.tasks.all"
+        ],
+        "daily": [
+            "library_management.tasks.daily"
+        ],
+        "hourly": [
+            "library_management.tasks.hourly"
+        ],
+        "weekly": [
+            "library_management.tasks.weekly"
+        ],
+        "monthly": [
+            "library_management.tasks.monthly"
+        ]
 }
-# ---------------------------------------Jinja customization- Doubt------------------------------------------
-jinja = {
-    "methods": [
-        "library_management.jinja_cus.method",
-        "library_management.utils.jinja_env.get_fullname",
-    ],
-    "filters": [
-        "library_management.jinja_cus.filters",
-        "library_management.utils.jinja_env.format_currency"
-    ]
-}
-
-#----------------------------------------------------Portal--------------------------------------------------
-
-web_include_css = "/assets/library_management/css/bg.css"
-
-#---------------------------------------------------Web Form-------------------------------------------------
-webform_include_css = {"Library Member": "/assets/library_management/css/webform.css"}
-
-#-----------------------------------------------------Sound---------------------------------------------------
-#Delete
-doctype_list_js = {
-    "Food Order": "public/js/food_sound.js"
-}
-#-------------------------------------------------Migrate Hooks-----------------------------------------------
-#Before & After Migrate
-
-before_migrate = "library_management.migrate_hooks.before&after_migrate.before_migrate"
-after_migrate = "library_management.migrate_hooks.before&after_migrate.after_migrate"
-
-#---------------------------------------------------Test Hooks-------------------------------------------------
-
-before_tests = "library_management.test_hooks.test.before_tests"
-#---------------------------------------------------File Hooks-------------------------------------------------
-
-doc_events = {
-    "Files" : {
-        "after_insert" : "library_management.file_hooks.file_hooks.on_file_uploaded",
-        "on_trash" : "library_management.file_hooks.file_hooks.on_file_deleted"
-    }
-}                    #----------------------Doubt
-
-
-#---------------------------------------------------Default Homepage----------------------------------------
-
-home_page = "food_order_sec"
-
-# Giving the permissions that who can see the page according the user
-role_home_page = {
-    "Sundar": "food_order_sec",
-    "Administrator": "Jinja%20API"
-}
-
-
-
-
-
-
-
-
-
+  
 
 
 

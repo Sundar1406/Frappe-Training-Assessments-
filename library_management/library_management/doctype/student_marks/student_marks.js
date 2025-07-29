@@ -59,7 +59,7 @@ frappe.ui.form.on("Student Marks", {
             });
         }
 
-
+//------------------------in list view
         frm.add_custom_button('Submit to Server', function() {
             frappe.call({
                 method: 'library_management.library_management.doctype.student_marks.student_marks.submit_to_server',
