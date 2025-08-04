@@ -6,13 +6,13 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "our_rules",
+  "anything_to_say",
   "todays_offer",
-  "our_duration",
-  "customer_data"
+  "our_duration"
  ],
  "fields": [
   {
+   "bold": 1,
    "fieldname": "our_duration",
    "fieldtype": "Time",
    "in_list_view": 1,
@@ -25,23 +25,18 @@
    "label": "Today's offer"
   },
   {
-   "fieldname": "our_rules",
+   "bold": 1,
+   "fieldname": "anything_to_say",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Our Rules "
-  },
-  {
-   "fieldname": "customer_data",
-   "fieldtype": "Link",
-   "label": "Customer Data",
-   "options": "Library Member"
+   "label": "Anything to Say "
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-11 15:36:07.006176",
+ "modified": "2025-08-04 11:45:45.562734",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Food Order Child",

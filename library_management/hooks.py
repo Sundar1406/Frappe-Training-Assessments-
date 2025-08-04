@@ -256,9 +256,9 @@ app_license = "mit"
 #     # --------------------------------Chart----------------------------------------
 #     "Student Marks": "public/js/student_marks_list.js",
 #     #---------------------------------Sound----------------------------------------
-#     #Delete
-#     "Food Order": "public/js/food_sound.js"
-# }
+    #     #Delete
+    #     "Food Order": "public/js/food_sound.js"
+    # }
 
 
 
@@ -352,29 +352,36 @@ app_license = "mit"
 
 #---------------------------------------------------------Scheular Events--------------------------------------
 
-schedular_events = {
-        "cron" : {
-            "* * * *": [
-                "library_management.tasks.cron"
-            ]
-        },
-        "all": [
-            "library_management.tasks.all"
-        ],
-        "daily": [
-            "library_management.tasks.daily"
-        ],
-        "hourly": [
-            "library_management.tasks.hourly"
-        ],
-        "weekly": [
-            "library_management.tasks.weekly"
-        ],
-        "monthly": [
-            "library_management.tasks.monthly"
+scheduler_events = {
+    # "all": [
+    #         "library_management.tasks.cron"
+    #     ]
+    
+    
+    "cron": {
+        "1 * * * *": [
+            "library_management.tasks.cron_asdasd"
+        ]
+    },
+     "hourly": [
+            "library_management.tasks.cron_asdasd"
         ]
 }
-  
 
+        
+        # "daily": [
+        #     "library_management.tasks.daily"
+        # ],
+       
+        # "weekly": [
+        #     "library_management.tasks.weekly"
+        # ],
+        # "monthly": [
+        #     "library_management.tasks.monthly"
+        # ]
 
+# -----------------------------------------------Razor pay-------------------------------------
+app_include_js = [
+    "https://checkout.razorpay.com/v1/checkout.js"
+]
 

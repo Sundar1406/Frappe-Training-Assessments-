@@ -1,42 +1,41 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-07-10 19:49:35.202621",
+ "autoname": "field:name1",
+ "creation": "2025-08-02 10:51:35.149915",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "name1",
-  "public",
-  "content"
+  "reg_no",
+  "salary"
  ],
  "fields": [
   {
    "fieldname": "name1",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Name",
-   "reqd": 1
+   "unique": 1
   },
   {
-   "default": "0",
-   "fieldname": "public",
-   "fieldtype": "Check",
-   "in_list_view": 1,
-   "label": "Public"
+   "fieldname": "reg_no",
+   "fieldtype": "Data",
+   "label": "Reg No"
   },
   {
-   "fieldname": "content",
-   "fieldtype": "Text Editor",
-   "label": "Content"
+   "fieldname": "salary",
+   "fieldtype": "Currency",
+   "label": "Salary"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-31 11:23:10.384918",
+ "modified": "2025-08-02 12:14:06.490168",
  "modified_by": "Administrator",
  "module": "Library Management",
- "name": "Scheduler_Demo",
+ "name": "Response",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

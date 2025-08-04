@@ -1,0 +1,14 @@
+<tbody>
+  {% for row in data %}
+    <tr>
+      <td style="border: 1px solid #ff0000; padding: 10px;">{{ row.name }}</td>
+      <td style="border: 1px solid #eee; padding: 10px;">{{ row.customer_name }}</td>
+      <td style="border: 1px solid #ff0000; padding: 10px;">{{ row.phone }}</td>
+      <td style="border: 1px solid #eee; padding: 10px;">{{ row.select_items }}</td>
+      <td style="border: 1px solid #ff0000; padding: 10px;">₹{{ row.item_price }}</td>
+      <td style="border: 1px solid #eee; padding: 10px;">{{ row.quantity }}</td>
+      <td style="border: 1px solid #ff0000; padding: 10px;">₹{{ row.total_amount }}</td>
+      <td style="border: 1px solid #eee; padding: 10px;">{{ row.creation.strftime('%d-%m-%Y') }}</td>
+    </tr>
+  {% endfor %}
+</tbody>

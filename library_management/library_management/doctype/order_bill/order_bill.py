@@ -51,7 +51,7 @@ def create_order_bill(food_order_name):
     # Copy child table items
     for item in food_order.food_child:
         order_bill.append("food_child", {
-            "our_rules": item.our_rules,
+            "anything_to_say": item.anything_to_say,
             "todays_offer": item.todays_offer,
             "our_duration": item.our_duration
         })

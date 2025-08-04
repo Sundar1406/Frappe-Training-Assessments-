@@ -1,0 +1,43 @@
+{% extends "templates/web.html" %}
+
+<div style="padding: 30px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333;">
+  <div style="text-align: center;">
+    <h1 style="margin-bottom: 0;">🍽️ Food Order Summary</h1>
+    <p style="margin-top: 4px; font-size: 14px; color: #666;">Printed on: {{ today }}</p>
+  </div>
+
+  <hr style="margin: 20px 0; border-top: 2px solid #ffd500;">
+
+  <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+    <thead style="background-color: #ff0000; color: #fff;">
+      <tr>
+        <th style="border: 1px solid #ff0000; padding: 10px;">Order ID</th>
+        <th style="border: 1px solid #ff0000; padding: 10px;">Customer Name</th>
+        <th style="border: 1px solid #ff0000; padding: 10px;">Phone</th>
+        <th style="border: 1px solid #ff0000; padding: 10px;">Item</th>
+        <th style="border: 1px solid #ff0000; padding: 10px;">Price</th>
+        <th style="border: 1px solid #ff0000; padding: 10px;">Qty</th>
+        <th style="border: 1px solid #ff0000; padding: 10px;">Total</th>
+        <th style="border: 1px solid #ff0000; padding: 10px;">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in data %}
+      <tr>
+        <td style="border: 1px solid #eee; padding: 10px;">{{ row.name }}</td>
+        <td style="border: 1px solid #eee; padding: 10px;">{{ row.customer_name }}</td>
+        <td style="border: 1px solid #eee; padding: 10px;">{{ row.phone }}</td>
+        <td style="border: 1px solid #eee; padding: 10px;">{{ row.select_items }}</td>
+        <td style="border: 1px solid #eee; padding: 10px;">₹{{ row.item_price }}</td>
+        <td style="border: 1px solid #eee; padding: 10px;">{{ row.quantity }}</td>
+        <td style="border: 1px solid #eee; padding: 10px;">₹{{ row.total_amount }}</td>
+        <td style="border: 1px solid #eee; padding: 10px;">{{ row.creation | format_date("dd-MM-yyyy") }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div style="margin-top: 40px; font-size: 12px; text-align: right; color: #888;">
+    Thank you for your order!
+  </div>
+</div>

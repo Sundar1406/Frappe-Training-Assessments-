@@ -40,7 +40,7 @@
   {
    "fieldname": "select_items",
    "fieldtype": "Select",
-   "label": "Select Items",
+   "label": " Select Items",
    "options": "\nChicken Biriyani\nButter Chicken with Naan\nPaneer Butter Masala\nChicken Fried Rice\nVeg Fried Rice\nChicken Shawarma\nVeg Shawarma\nPaneer Tikka",
    "placeholder": "--select--"
   },
@@ -55,7 +55,7 @@
    "default": "0.00",
    "fieldname": "total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount",
+   "label": " Total Amount",
    "read_only": 1
   },
   {
@@ -74,7 +74,7 @@
   {
    "fieldname": "food_child",
    "fieldtype": "Table",
-   "label": "Food Child",
+   "label": " Food Child",
    "options": "Food Order Child"
   },
   {
@@ -90,7 +90,7 @@
   {
    "fieldname": "email_address",
    "fieldtype": "Data",
-   "label": "Email Address"
+   "label": " Email Address"
   },
   {
    "fieldname": "phone_number",
@@ -101,7 +101,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-19 15:53:45.429347",
+ "modified": "2025-08-04 13:04:24.777930",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Food Order",

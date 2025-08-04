@@ -10,11 +10,13 @@
   "email_address",
   "phone_number",
   "delivery_address",
+  "payment_status",
   "column_break_anbt",
   "select_items",
   "item_price",
   "quantity",
   "total_amount",
+  "payment_id",
   "section_break_qqlf",
   "food_child"
  ],
@@ -83,12 +85,26 @@
    "fieldtype": "Phone",
    "label": "Phone Number",
    "read_only": 1
+  },
+  {
+   "fieldname": "payment_id",
+   "fieldtype": "Data",
+   "label": "Payment Id",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Payment Status",
+   "options": "Paid\nUnpaid",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-19 16:10:31.054821",
+ "modified": "2025-07-31 16:53:11.348559",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Order Bill",

@@ -2,19 +2,99 @@ frappe.ui.form.on('Food Order', {
 
     // ----------------------------- Refresh -----------------------------
     refresh(frm) {
+        if (!$("style[data-custom='food-order-style']").length) {
+            $("<style>")
+                .attr("data-custom", "food-order-style")
+                .html(`
+                    .form-section {
+                        background-image: linear-gradient(135deg, #000000ff 0%, #f5c908ff 100%);
+                    }
+                    .control-label {
+                    font-family: 'Great Vibes',cursive;
+                    font-weight: bold; 
+                    color: #FFD700;
+                    font-size: 20px;         
+                    font-weight: 500;                     
+                    font-size: 14px;                     
+                    letter-spacing: 0.5px;               
+                    transition: color 0.3s ease-in-out;   
+                    }
+                    .form-control {
+                    background-color: #000000ff;
+                    font-family: 'Great Vibes',cursive;
+                    border: 1px solid #ccc;
+                    border-radius: 6px;
+                    padding: 8px 12px;
+                    font-size: 14px;
+                    color: #cacacaff;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 5px 6px rgba(0, 0, 0, 1);
+                    }
+                    [data-fieldname="item_price"] .control-value,
+                    [data-fieldname="total_amount"] .control-value {
+                    background-color: #000;
+                    font-family: 'Great Vibes', cursive;
+                    border: 1px solid #ccc;
+                    border-radius: 6px;
+                    padding: 6px 10px;
+                    font-size: 14px;
+                    color: #cacacaff;
+                    box-shadow: 0 5px 6px rgba(0, 0, 0, 1);
+                    display: inline-block;width: 100%;
+                    }
+                    
+                    div.frappe-control.form-group[data-fieldname="food_child"] {
+                    background: linear-gradient(to right, #000000ff , #f5c908ff) !important;
+                    border-radius: 10px !important;
+                    padding: 15px !important;
+                    margin-bottom: 20px !important;
+                    }
+                    .grid-heading-row {
+                    background-color: #111 !important;
+                    color: #FFD700 !important;
+                    font-family: 'Poppins', sans-serif !important;
+                    font-weight: bold !important;
+                    }
+                    .grid-row {
+                    background-color: rgba(0, 0, 0, 0.5) !important;
+                    color: #fff !important;
+                    font-family: 'Poppins', sans-serif !important;
+                    }
+                    .grid-row:hover {
+                    background-color: rgba(194, 194, 194, 0.1) !important;
+                    }.grid-row input,.grid-row select,.grid-row textarea {
+                    background-color: #000 !important;
+                    color: #FFD700 !important;
+                    border: 1px solid #FFD700 !important;
+                    border-radius: 4px !important;
+                    padding: 5px !important;
+                    font-family: 'Great Vibes', cursive !important;
+                    box-shadow: 0 4px 6px rgba(255, 215, 0, 0.2) !important;
+                    }
+                    .grid-row-check:disabled {
+                    filter: grayscale(100%) !important;
+                    border: 1px solid #FFD700 !important;
+                    background-color: #1a1a1a !important;
+                    box-shadow: 0 0 4px #686766ff !important;
+                    cursor: not-allowed !important;
+                    }
+                `)
+                .appendTo("head");
+        }
+
         // Hide location field initially
         frm.set_df_property('select_your_location', 'hidden', 1);
         frm.refresh_field('select_your_location');
 
         // Show map button
-        frm.add_custom_button('Show Map', () => {
+        frm.add_custom_button('📌Show Map', () => {
             frm.set_df_property('select_your_location', 'hidden', 0);
             frm.refresh_field('select_your_location');
         });
 
         //Print Bill
    
-        frm.add_custom_button('Print Bill', () => {
+        frm.add_custom_button('📜Print Bill', () => {
             // Check if the doc is saved
             if (!frm.doc.__islocal) {
                 frappe.call({

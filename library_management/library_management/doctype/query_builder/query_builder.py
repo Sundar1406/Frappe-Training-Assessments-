@@ -329,19 +329,19 @@ class QueryBuilder(Document):
     
     
     #offset
-    std_rec = frappe.qb.DocType("Query Builder")
+    # std_rec = frappe.qb.DocType("Query Builder")
     
-    query = (
-        frappe.qb.from_(std_rec)
-        .select(
-            std_rec.name1,
-            std_rec.age,
-            std_rec.father_name
-        )
-        .limit(2)
-        .offset(1)
-    )
-    res = query.run(as_dict = True)
+    # query = (
+    #     frappe.qb.from_(std_rec)
+    #     .select(
+    #         std_rec.name1,
+    #         std_rec.age,
+    #         std_rec.father_name
+    #     )
+    #     .limit(2)
+    #     .offset(1)
+    # )
+    # res = query.run(as_dict = True)
     print("----------------------------",res)
     
     

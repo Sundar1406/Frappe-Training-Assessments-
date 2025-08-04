@@ -19,7 +19,7 @@ def get_columns():
 def get_values(filters):
     condition = "1=1"
     if filters.get("customer_name"):
-        condition += f" AND S.customer_name ='{filters.get('customer_name')}'"
+        condition += f" AND S.customer_name LIKE '%{filters.get('customer_name')}%'"
     if filters.get("advance_payment"):
         condition += f" AND S.advance_payment ='{filters.get('advance_payment')}'"
     if filters.get("driving_licence"):
